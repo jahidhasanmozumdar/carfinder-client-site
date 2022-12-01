@@ -1,0 +1,32 @@
+.banner {
+  background: url("../../Asset/banner.jpg") no-repeat;
+  height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.nav-bg {
+  background-color: rgba(60, 88, 250, 0.87);
+  background-blend-mode: overlay;
+}
+
+/* login */
+.login-bg {
+  background-image: url("https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg1 {
+  background-image: url("https://images.unsplash.com/photo-1513569771920-c9e1d31714af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dive8 {
+  height: 2px;
+  background-color: orange;
+  width: 100px;
+}
