@@ -19,6 +19,7 @@ import NotAPage from "./Component/Shared/NotAPage";
 import RequireAdmin from "./Component/Shared/RequireAdmin";
 import RequireAuth from "./Component/Shared/RequireAuth";
 import Footer from "./Component/Shared/Footer";
+import Blog from "./Component/Blog/Blog";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog/>} />
         <Route path="home/:carcategory" element={<CarsInfo />} />
         <Route
           path="/purchase/:id"
