@@ -2,7 +2,7 @@
 ## Admin panel system
 ## User order and payment system
 ## admin handle the user order tracking with paid or unpaid
-## user review system dynami
+## user review system dynamic
 
 ### `npm start`
 
