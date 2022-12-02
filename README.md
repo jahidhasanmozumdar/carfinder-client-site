@@ -1,10 +1,8 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+## Login signUp system
+## Admin panel system
+## User order and payment system
+## admin handle the user order tracking with paid or unpaid
+## user review system dynamic
 
 ### `npm start`
 
