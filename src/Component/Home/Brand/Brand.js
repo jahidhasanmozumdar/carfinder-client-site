@@ -47,13 +47,13 @@ const Brand = () => {
         >
           <figure className="px-10 pt-10">
             <img
-              src="https://audimediacenter-a.akamaihd.net/system/production/media/1282/images/bde751ee18fe149036c6b47d7595f6784f8901f8/AL090142_full.jpg?1581961854"
+              src="https://images.unsplash.com/photo-1543854589-fdd815f176e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1004&q=80"
               alt="Shoes"
               className="rounded-xl h-36 w-52"
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Brand name: Audi!</h2>
+            <h2 className="card-title">Brand name: lamborghini!</h2>
           </div>
         </div>
       </div>
