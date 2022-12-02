@@ -4,7 +4,7 @@
 
 ## User order and payment system
 
-## admin handle the user order trackin with paid or unpaid
+## admin handle the user order tracking with paid or unpaid
 
 ## user review system dynamic
 
