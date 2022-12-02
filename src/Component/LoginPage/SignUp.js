@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../../Component/Shared/SocialLogin";
 
-
 import {
   useCreateUserWithEmailAndPassword,
-  useUpdateProfile
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -31,45 +30,39 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const [roleUser, setRoleUser] = useState()
+  const [roleUser, setRoleUser] = useState();
 
   const onSubmit = async (data) => {
-    setRoleUser(data)
+    setRoleUser(data);
     await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name }); 
-const sellers = {
-  email: data?.email,
-  seller: data?.seller
-}
-      if(data?.seller === true) {
-        await fetch(`http://localhost:5000/user/seller`, {
-          method: "POST",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-          body: JSON.stringify(data?.email),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-           console.log(result);
-         
-          });
-      
+    await updateProfile({ displayName: data.name });
+    const sellers = {
+      email: data?.email,
+      seller: data?.seller,
+    };
+    if (data?.seller === true) {
+      await fetch(`https://carfinder-server-site.vercel.app/user/seller`, {
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(data?.email),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+        });
     }
-
   };
-
-
 
   let signInError;
 
   if (loading || updating) {
-    return <Loading/> ;
+    return <Loading />;
   }
   if (error || updateError) {
     signInError = <p className="text-red-500">{error?.message}</p>;
   }
-
 
   return (
     <div className="hero min-h-screen">
@@ -164,9 +157,8 @@ const sellers = {
             </div>
             {signInError}
             <p>Seller Account?</p>
-            <input type="checkbox" className="toggle"  {...register("seller" )}/>
-      
- 
+            <input type="checkbox" className="toggle" {...register("seller")} />
+
             <div className="form-control mt-6">
               <button className="btn btn-accent">Sign Up</button>
             </div>

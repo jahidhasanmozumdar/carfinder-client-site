@@ -18,7 +18,7 @@ const Payment = () => {
     error,
     data: orders,
   } = useQuery(["payment", id], () =>
-    fetch(`http://localhost:5000/payment/${id}`, {
+    fetch(`https://carfinder-server-site.vercel.app/payment/${id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

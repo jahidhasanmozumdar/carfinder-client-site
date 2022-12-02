@@ -8,7 +8,7 @@ const AddProducts = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    fetch("http://localhost:5000/addProduct", {
+    fetch("https://carfinder-server-site.vercel.app/addProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,6 @@ const AddProducts = () => {
           {...register("original_price")}
         />
 
-       
         <input
           className="flex flex-col mb-2 p-2 border-b-2 w-full"
           placeholder="photo url"

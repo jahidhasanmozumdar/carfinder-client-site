@@ -12,7 +12,7 @@
 //   // const [userInformation, setUserInformation] = useState({});
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/purchase/${id}`)
+//     fetch(`https://carfinder-server-site.vercel.app/purchase/${id}`)
 //       .then((res) => res.json())
 //       .then((result) => setSingleProduct(result));
 //   }, []);
@@ -44,7 +44,7 @@
 //         ...singleProduct,
 //         availableQuantity: newAvailable,
 //       };
-//       fetch(`http://localhost:5000/purchase/${id}`, {
+//       fetch(`https://carfinder-server-site.vercel.app/purchase/${id}`, {
 //         method: "PUT",
 //         headers: {
 //           "content-type": "application/json",
@@ -69,7 +69,7 @@
 //         userName: user?.displayName,
 //         quantity: quantity,
 //       };
-//       fetch("http://localhost:5000/orders", {
+//       fetch("https://carfinder-server-site.vercel.app/orders", {
 //         method: "POST",
 //         headers: {
 //           "content-type": "application/json",
@@ -91,7 +91,7 @@
 //   //     data: userInformation,
 //   //   } = useQuery("userInfo", () =>
 //   //     fetch(
-//   //       `http://localhost:5000/userInfo/${user?.email}`
+//   //       `https://carfinder-server-site.vercel.app/userInfo/${user?.email}`
 //   //     ).then((res) => res.json())
 //   //   );
 //   // console.log(userInformation);
@@ -102,7 +102,7 @@
 //   const [userInformation, setIserInformation] = useState();
 //   useEffect(() => {
 //     axios
-//       .get(`http://localhost:5000/userInfo/${user?.email}`)
+//       .get(`https://carfinder-server-site.vercel.app/userInfo/${user?.email}`)
 //       .then((res) => setIserInformation(res.data));
 //   }, []);
 
@@ -208,11 +208,10 @@ import auth from "../../firebase.init";
 
 const Purchase = () => {
   const { id } = useParams();
-    const [singleProduct, setSingleProduct] = useState({});
-
+  const [singleProduct, setSingleProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/purchase/${id}`)
+    fetch(`https://carfinder-server-site.vercel.app/purchase/${id}`)
       .then((res) => res.json())
       .then((result) => setSingleProduct(result));
   }, []);
@@ -225,7 +224,7 @@ const Purchase = () => {
     const phoneNumber = event.target.phoneNumber.value;
 
     const userInfo = { email, name, address, phoneNumber };
-    // fetch(`http://localhost:5000/userInfo/${email}`, {
+    // fetch(`https://carfinder-server-site.vercel.app/userInfo/${email}`, {
     //   method: "PUT",
     //   headers: {
     //     "content-type": "application/json",
@@ -238,30 +237,31 @@ const Purchase = () => {
     //     event.target.reset();
     //   });
 
-          const ordersInfo = {
-        name: name,
-        picture: singleProduct?.photo,
-        price: singleProduct?.resale_price,
-        email: user.email,
-        userName: user?.displayName,
-        
-      };
-      fetch("http://localhost:5000/orders", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(ordersInfo),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-              toast.success(`successfully order ${singleProduct?.name}`);
-              event.target.reset();
-            });
+    const ordersInfo = {
+      name: name,
+      picture: singleProduct?.photo,
+      price: singleProduct?.resale_price,
+      email: user.email,
+      userName: user?.displayName,
+    };
+    fetch("https://carfinder-server-site.vercel.app/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(ordersInfo),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        toast.success(`successfully order ${singleProduct?.name}`);
+        event.target.reset();
+      });
   };
   return (
     <div className="mt-12">
-      <h2 className="text-4xl text-center text-accent mb-2">Book Car : {singleProduct?.name}</h2>
+      <h2 className="text-4xl text-center text-accent mb-2">
+        Book Car : {singleProduct?.name}
+      </h2>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
         <div className="card-body">
           <form onSubmit={handleUserInfo} className="flex flex-col gap-2">

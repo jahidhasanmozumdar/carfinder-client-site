@@ -13,7 +13,7 @@ const MyOrder = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `http://localhost:5000/orders?email=${user?.email}`,
+        `https://carfinder-server-site.vercel.app/orders?email=${user?.email}`,
         {
           method: "GET",
           headers: {
@@ -36,7 +36,7 @@ const MyOrder = () => {
   const handleDeleteOrders = (id) => {
     const proceed = window.confirm("Ary you sure?");
     if (proceed) {
-      fetch(`http://localhost:5000/removeItem/${id}`, {
+      fetch(`https://carfinder-server-site.vercel.app/removeItem/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

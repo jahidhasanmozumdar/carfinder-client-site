@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const CheckoutForm = ({ orders }) => {
   const { _id, price, userName, email } = orders;
- 
+
   const stripe = useStripe();
   const elements = useElements();
 
@@ -14,7 +14,7 @@ const CheckoutForm = ({ orders }) => {
   const [paymentLoading, setPaymentLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://carfinder-server-site.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,7 +78,7 @@ const CheckoutForm = ({ orders }) => {
         payment: _id,
       };
 
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://carfinder-server-site.vercel.app/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -117,7 +117,7 @@ const CheckoutForm = ({ orders }) => {
         <button
           className="btn-xs btn w-1/3 flex mx-auto mt-4"
           type="submit"
-          disabled={!stripe  || paymentSuccess}
+          disabled={!stripe || paymentSuccess}
         >
           Pay now
         </button>

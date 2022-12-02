@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-
 const MakeAdmin = () => {
   // const {
   //   isLoading,
@@ -10,7 +9,7 @@ const MakeAdmin = () => {
   //   data: users,
   //   refetch,
   // } = useQuery("users", () =>
-  //   fetch("http://localhost:5000/home", {
+  //   fetch("https://carfinder-server-site.vercel.app/home", {
   //     method: "GET",
   //     headers: {
   //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -23,11 +22,13 @@ const MakeAdmin = () => {
   const [users, setUser] = useState([]);
   console.log(users);
   useEffect(() => {
-    axios.get("http://localhost:5000/user").then(res => setUser(res.data))
-  }, [])
+    axios
+      .get("https://carfinder-server-site.vercel.app/user")
+      .then((res) => setUser(res.data));
+  }, []);
 
   const makeAdmin = (email) => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://carfinder-server-site.vercel.app/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,7 +42,7 @@ const MakeAdmin = () => {
   };
 
   const handleDeleteAdmin = (email) => {
-    fetch(`http://localhost:5000/adminRemove/${email}`, {
+    fetch(`https://carfinder-server-site.vercel.app/adminRemove/${email}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -53,11 +54,8 @@ const MakeAdmin = () => {
       });
   };
 
-
-
   return (
     <div>
-    
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
