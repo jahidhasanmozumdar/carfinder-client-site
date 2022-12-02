@@ -1,7 +1,7 @@
 ## Login signUp system
 ## Admin panel system
 ## User order and payment system
-## admin handle the user order tracking with paid or unpaid
+## admin handle the user order tracking with paid or unpai
 ## user review system dynamic
 
 ### `npm start`
