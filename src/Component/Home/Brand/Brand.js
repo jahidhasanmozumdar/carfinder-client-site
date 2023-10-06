@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 const Brand = () => {
   const navigate = useNavigate();
 
- 
   return (
     <div>
-      <h2 className="text-4xl my-4 text-center">choice your brand</h2>
+      <h2 className="text-4xl my-4 text-center">Most Popular Brand</h2>
       <hr className="w-64  flex justify-center items-center h-full mx-auto " />
-      <div className=" flex justify-center items-center h-full mx-auto gap-6 my-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  place-items-center h-full mx-auto gap-[18px] my-6">
         <div
           onClick={() => navigate("/home/bmw")}
-          className="card w-96  bg-slate-300 shadow-xl"
+          className="bg-slate-200 max-w-[300px] border shadow-xl rounded-md"
         >
           <figure className="px-10 pt-10">
             <img
@@ -27,7 +26,7 @@ const Brand = () => {
         </div>
         <div
           onClick={() => navigate("home/Mercedes")}
-          className="card w-96  bg-slate-300 shadow-xl"
+          className="bg-slate-200 max-w-[300px] border shadow-xl rounded-md"
         >
           <figure className="px-10 pt-10">
             <img
@@ -40,10 +39,9 @@ const Brand = () => {
             <h2 className="card-title">Brand name: Mercedes-Benz!</h2>
           </div>
         </div>
-
         <div
           onClick={() => navigate("home/Lamborghini")}
-          className="card w-96  bg-slate-300 shadow-xl"
+          className="bg-slate-200 max-w-[300px] border shadow-xl rounded-md"
         >
           <figure className="px-10 pt-10">
             <img

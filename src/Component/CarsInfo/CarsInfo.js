@@ -18,13 +18,13 @@ const CarsInfo = () => {
   }, []);
 
   return (
-    <div className="bg-zinc-300 p-16 rounded-tl-full grid grid-cols-4 gap-6 justify-center items-center h-full mx-auto">
+    <div className="bg-zinc-300 rounded-tl-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 place-items-center gap-y-[16px] h-full mx-auto mb-[50px]">
       {categoryCar.map((car) => (
-        <div className="card  bg-base-100 shadow-2xl ">
+        <div className="max-w-[400px] min-h-[570px] max-h-[570px] bg-base-100 shadow-2xl ">
           <figure className="px-10 pt-10">
             <img src={car?.photo} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div className="card-body items-start text-center">
+          <div className="card-body items-start text-start">
             <h2 className="card-title">Name: {car?.name}</h2>
             <p>location: {car?.location}</p>
             <p>resale price:{car?.resale_price} </p>
