@@ -20,15 +20,15 @@ import RequireAdmin from "./Component/Shared/RequireAdmin";
 import RequireAuth from "./Component/Shared/RequireAuth";
 import Footer from "./Component/Shared/Footer";
 import Blog from "./Component/Blog/Blog";
+import Contact from "./Component/Contact/Contact";
 
 function App() {
   return (
     <div>
-      
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog/>} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/home/:carcategory" element={<CarsInfo />} />
         <Route
           path="/purchase/:id"
@@ -41,6 +41,7 @@ function App() {
 
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/Contact" element={<Contact></Contact>} />
 
         <Route
           path="/dashboard"
@@ -50,7 +51,7 @@ function App() {
             </RequireAuth>
           }
         >
-       <Route path="orders" element={<MyOrder />} />
+          <Route path="orders" element={<MyOrder />} />
           <Route
             path="makeAdmin"
             element={
@@ -59,15 +60,13 @@ function App() {
               </RequireAdmin>
             }
           />
-               <Route path="payment/:id" element={<Payment />} />
-               <Route path="manageProducts" element={<ManageOrders />} />
-               <Route path="addProducts" element={<AddProducts />} />
-         
+          <Route path="payment/:id" element={<Payment />} />
+          <Route path="manageProducts" element={<ManageOrders />} />
+          <Route path="addProducts" element={<AddProducts />} />
         </Route>
         <Route path="*" element={<NotAPage />} />
-        
       </Routes>
-      <Footer/>
+      <Footer />
       <ToastContainer />
     </div>
   );

@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link to="/about">About Me</Link>
+        <Link to="/Contact">Contact</Link>
       </li>
       {user ? (
         <div className="dropdown dropdown-end">
