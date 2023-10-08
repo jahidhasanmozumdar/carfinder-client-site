@@ -23,7 +23,7 @@ const ManageProduct = () => {
       });
   };
   return (
-    <div className="my-6 mt-32">
+    <div>
       <div className="overflow-x-auto  w-full mx-auto ">
         <table className="table w-full ">
           <thead>

@@ -21,6 +21,7 @@ import RequireAuth from "./Component/Shared/RequireAuth";
 import Footer from "./Component/Shared/Footer";
 import Blog from "./Component/Blog/Blog";
 import Contact from "./Component/Contact/Contact";
+import SellingData from "./Component/SellingData/SellingData";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotAPage />} />
       </Routes>
+      <SellingData></SellingData>
       <Footer />
       <ToastContainer />
     </div>
