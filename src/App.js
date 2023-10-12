@@ -37,8 +37,22 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Contact" element={<Contact></Contact>} />
 
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="orders" element={<MyOrder />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            path="orders"
+            element={
+              <RequireAuth>
+                <MyOrder />
+              </RequireAuth>
+            }
+          />
           <Route
             path="makeAdmin"
             element={

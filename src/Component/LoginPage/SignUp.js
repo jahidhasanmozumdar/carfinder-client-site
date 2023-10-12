@@ -163,10 +163,7 @@ const SignUp = () => {
               <button className="btn btn-accent">Sign Up</button>
             </div>
             <div className="flex flex-col sm:flex-row justify-center mt-3">
-              <small className="text-accent mr-1">
-                {" "}
-                New to Jahid photography?
-              </small>
+              <small className="text-accent mr-1"> New to Car Finder?</small>
               <small
                 onClick={() => navigate("/login")}
                 className="text-primary cursor-pointer"
