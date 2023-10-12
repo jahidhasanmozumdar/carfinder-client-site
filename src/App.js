@@ -31,27 +31,13 @@ function App() {
 
         <Route path="/blog" element={<Blog />} />
         <Route path="/home/:carcategory" element={<CarsInfo />} />
-        <Route
-          path="/purchase/:id"
-          element={
-            <RequireAuth>
-              <Purchase />
-            </RequireAuth>
-          }
-        />
+        <Route path="/purchase/:id" element={<Purchase />} />
 
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Contact" element={<Contact></Contact>} />
 
-        <Route
-          path="/dashboard"
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
-        >
+        <Route path="/dashboard" element={<Dashboard />}>
           <Route path="orders" element={<MyOrder />} />
           <Route
             path="makeAdmin"
